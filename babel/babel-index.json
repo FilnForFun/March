@@ -1,0 +1,161 @@
+{
+  "health_score": 95,
+  "index_files": 8,
+  "updated": "2026-04-13T09:35:59.736946",
+  "files": [
+    "babel-index.json",
+    "memory-index.json",
+    "skills-index.json",
+    "tasks-index.json",
+    "events-index.json",
+    "archives-index.json",
+    "tools-index.json",
+    "session-fts.json"
+  ],
+  "session_search": {
+    "enabled": true,
+    "index_file": "session-fts.json",
+    "total_sessions": 84,
+    "total_messages": 1334,
+    "vocabulary_size": 19863,
+    "index_size_mb": 3.16,
+    "built_at": "2026-04-13T09:35:59.736946"
+  },
+  "project": {
+    "name": "BABEL-EVOLVER",
+    "phase": "COMPLETE",
+    "started": "2026-04-13",
+    "completed": "2026-04-13",
+    "status": "All Phases Complete",
+    "tasks_completed": 14,
+    "tasks_total": 14,
+    "subagents_used": 1,
+    "cron_tasks_active": 16,
+    "skills_total": 73,
+    "scripts_created": 5
+  },
+  "intent_classifier": {
+    "enabled": true,
+    "intents": [
+      "查询",
+      "执行",
+      "规划",
+      "回顾",
+      "闲聊"
+    ],
+    "domains": [
+      "金融",
+      "技术",
+      "项目",
+      "生活",
+      "知识",
+      "通用"
+    ]
+  },
+  "knowledge_distiller": {
+    "script": "scripts/knowledge-distiller-auto.py",
+    "cron": "0 3 * * *",
+    "raw_dir": "raw/",
+    "distilled_dir": "distilled/",
+    "status": "Script created, cron scheduled"
+  },
+  "unified_index": {
+    "enabled": true,
+    "file": "skills/unified-index/unified_index.py",
+    "sources": [
+      "session",
+      "memory",
+      "skills"
+    ],
+    "total_sessions": 84,
+    "total_memories": 60,
+    "total_skills": 3
+  },
+  "semantic_graph": {
+    "enabled": true,
+    "index_file": "semantic-graph.json",
+    "built_at": "2026-04-13T09:46:50.938743"
+  },
+  "knowledge_graph": {
+    "enabled": true,
+    "script": "skills/knowledge-graph/knowledge_graph.py",
+    "index_file": "semantic-graph.json",
+    "total_nodes": 5701,
+    "filtered_nodes": 380,
+    "total_edges": 1009433,
+    "filtered_edges": 13545,
+    "entity_types": {
+      "concept": 357,
+      "tech": 15,
+      "project": 7,
+      "person": 1
+    }
+  },
+  "adaptive_compression": {
+    "enabled": true,
+    "levels": [
+      "L0: no compression (<50)",
+      "L1: trim tools (50-150)",
+      "L2: summary (150-300)",
+      "L3: deep (>300)"
+    ],
+    "script": "skills/adaptive-compression/compression.py"
+  },
+  "darwin_evolution": {
+    "enabled": true,
+    "script": "scripts/darwin_evolution.py",
+    "modes": [
+      "--scan-only",
+      "--auto",
+      "--report"
+    ],
+    "health_score": 100,
+    "active_skills": 50,
+    "inactive_skills": 15,
+    "high_freq_skills": 3,
+    "new_content_candidates": 116
+  },
+  "cace_engine": {
+    "enabled": true,
+    "script": "skills/adaptive-compression/cace_engine.py",
+    "levels": {
+      "L0": "no compression (<50 msgs)",
+      "L1": "content-aware trim (50-150)",
+      "L2": "structured summary + high-importance keep (150-300)",
+      "L3": "deep summary + recent 10 (300+)"
+    },
+    "features": [
+      "content categorization (critical/important/compressible/discardable)",
+      "semantic importance scoring (0.0-1.0)",
+      "hybrid compression (different rate per content type)",
+      "structured summary extraction (goal/decisions/files/commands/errors)"
+    ]
+  },
+  "execution_layer": {
+    "enabled": true,
+    "router": "skills/execution-layer/router.py",
+    "features": [
+      "intent classification (5 intents x 6 domains)",
+      "execution plan generation",
+      "context loading recommendations",
+      "skill activation suggestions",
+      "subagent spawn decisions",
+      "compression level suggestions"
+    ],
+    "intents": [
+      "查询",
+      "执行",
+      "规划",
+      "回顾",
+      "闲聊"
+    ],
+    "domains": [
+      "金融",
+      "技术",
+      "项目",
+      "生活",
+      "知识",
+      "通用"
+    ]
+  }
+}

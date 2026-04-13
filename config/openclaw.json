@@ -1,0 +1,284 @@
+﻿{
+    "meta": {
+        "lastTouchedVersion": "2026.4.8",
+        "lastTouchedAt": "2026-04-08T13:58:00.000Z"
+    },
+    "wizard": {
+        "lastRunAt": "2026-01-31T11:08:48.292Z",
+        "lastRunVersion": "0.0.0",
+        "lastRunCommand": "onboard",
+        "lastRunMode": "local"
+    },
+    "browser": {
+        "enabled": true,
+        "evaluateEnabled": true,
+        "cdpUrl": "http://127.0.0.1:9222",
+        "remoteCdpTimeoutMs": 30000,
+        "remoteCdpHandshakeTimeoutMs": 30000,
+        "executablePath": "C:\\Users\\30959\\.openclaw\\chromium\\Application\\chrome.exe",
+        "attachOnly": false,
+        "defaultProfile": "clawd",
+        "profiles": {
+            "clawd": {
+                "cdpUrl": "http://127.0.0.1:9222",
+                "driver": "clawd",
+                "color": "#FF4500"
+            }
+        }
+    },
+    "models": {
+        "mode": "merge",
+        "providers": {
+            "molili": {
+                "baseUrl": "https://molili.8kbl.com/molili-agi/chatApi/v1",
+                "apiKey": "***REDACTED***",
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "molili",
+                        "name": "Molili"
+                    }
+                ]
+            },
+            "闃块噷浜戠櫨鐐?: {
+                "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+                "apiKey": "sk-sp-***REDACTED***",
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "qwen3-max-2026-01-23",
+                        "name": "Qwen3-Max-2026-01-23",
+                        "contextWindow": 1000000
+                    },
+                    {
+                        "id": "kimi-k2.5",
+                        "name": "kimi-k2.5",
+                        "contextWindow": 256000
+                    },
+                    {
+                        "id": "glm-5",
+                        "name": "GLM-5",
+                        "contextWindow": 200000
+                    },
+                    {
+                        "id": "MiniMax-M2.5",
+                        "name": "MiniMax-M2.5",
+                        "contextWindow": 1000000
+                    },
+                    {
+                        "id": "qwen3.5-plus",
+                        "name": "Qwen3.5-plus",
+                        "contextWindow": 1000000
+                    }
+                ]
+            },
+            "openrouter": {
+                "baseUrl": "https://openrouter.ai/api/v1",
+                "apiKey": "sk-or-v1-***REDACTED***",
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "xiaomi/mimo-v2-pro",
+                        "name": "Xiaomi Mimo V2 Pro"
+                    }
+                ]
+            },
+            "鐏北鏂硅垷": {
+                "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
+                "apiKey": "4b042d5c-14e8-440f-9967-0241c81b1660",
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "doubao-2.0-pro",
+                        "name": "Doubao 2.0 Pro"
+                    }
+                ]
+            },
+            "xiaomi": {
+                "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
+                "apiKey": "tp-c45wvr7ocbqnczwnsz0bd4grb9gpnhfbwrmusz105gqwapip",
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "mimo-v2-pro",
+                        "name": "mimo-v2-pro",
+                        "reasoning": true,
+                        "input": [
+                            "text"
+                        ],
+                        "contextWindow": 1048576,
+                        "maxTokens": 32000
+                    },
+                    {
+                        "id": "mimo-v2-omni",
+                        "name": "mimo-v2-omni",
+                        "reasoning": true,
+                        "input": [
+                            "text",
+                            "image"
+                        ],
+                        "contextWindow": 262144,
+                        "maxTokens": 32000
+                    }
+                ]
+            }
+        }
+    },
+    "agents": {
+        "defaults": {
+            "model": {
+                "primary": "闃块噷浜戠櫨鐐?qwen3.6-plus"
+            },
+            "models": {
+                "xiaomi/mimo-v2-omni": {},
+                "xiaomi/mimo-v2-pro": {},
+                "闃块噷浜戠櫨鐐?glm-5": {},
+                "闃块噷浜戠櫨鐐?qwen3-coder-plus": {},
+                "闃块噷浜戠櫨鐐?kimi-k2.5": {},
+                "闃块噷浜戠櫨鐐?minimax-m2.5": {},
+                "闃块噷浜戠櫨鐐?qwen3-max-2026-01-23": {},
+                "鐏北鏂硅垷/doubao-2.0-pro": {},
+                "openrouter/xiaomi/mimo-v2-pro": {}
+            },
+            "workspace": "C:\\Users\\30959\\.openclaw\\workspace",
+            "bootstrapMaxChars": 20000,
+            "bootstrapTotalMaxChars": 500000,
+            "typingMode": "message",
+            "typingIntervalSeconds": 6,
+            "timeoutSeconds": 1800,
+            "memorySearch": {
+                "provider": "openai",
+                "remote": {
+                    "baseUrl": "http://127.0.0.1:18790",
+                    "apiKey": "local-no-key-needed"
+                },
+                "model": "BAAI/bge-small-en-v1.5"
+            },
+            "contextPruning": {
+                "mode": "cache-ttl",
+                "keepLastAssistants": 10,
+                "softTrimRatio": 0.4
+            },
+            "contextInjection": "continuation-skip",
+            "bootstrapPromptTruncationWarning": "once",
+            "blockStreamingDefault": "on",
+            "blockStreamingBreak": "text_end",
+            "blockStreamingChunk": {
+                "minChars": 300,
+                "maxChars": 1500
+            },
+            "blockStreamingCoalesce": {
+                "minChars": 1500,
+                "maxChars": 4000,
+                "idleMs": 800
+            },
+            "humanDelay": {
+                "mode": "natural"
+            },
+            "compaction": {
+                "mode": "safeguard",
+                "model": "闃块噷浜戠櫨鐐?qwen3-max-2026-01-23",
+                "notifyUser": true
+            },
+            "maxConcurrent": 4,
+            "subagents": {
+                "maxConcurrent": 8,
+                "model": "闃块噷浜戠櫨鐐?kimi-k2.5",
+                "runTimeoutSeconds": 600
+            }
+        }
+    },
+    "messages": {
+        "ackReactionScope": "group-mentions"
+    },
+    "commands": {
+        "native": "auto",
+        "nativeSkills": "auto",
+        "restart": true,
+        "ownerDisplay": "raw"
+    },
+    "channels": {
+        "defaults": {
+            "heartbeat": {
+                "showOk": false,
+                "showAlerts": true,
+                "useIndicator": true
+            }
+        },
+        "feishu": {
+            "accounts": {
+                "default": {
+                    "appId": "cli_a924f8fea0381cc6",
+                    "appSecret": "***REDACTED***",
+                    "enabled": true
+                }
+            },
+            "enabled": true,
+            "typingIndicator": true,
+            "allowFrom": [
+                "ou_61eb93a02501b3cf0958560d08968166",
+                "*"
+            ]
+        }
+    },
+    "gateway": {
+        "port": 18789,
+        "mode": "local",
+        "bind": "loopback",
+        "controlUi": {
+            "allowedOrigins": [
+                "tauri://localhost",
+                "http://tauri.localhost",
+                "http://localhost:1420"
+            ]
+        },
+        "auth": {
+            "mode": "token",
+            "token": "99a1282cff39ec6008916016302302fe42dd769c6d1fdfc1"
+        },
+        "tailscale": {
+            "mode": "off",
+            "resetOnExit": false
+        },
+        "http": {
+            "endpoints": {
+                "chatCompletions": {
+                    "enabled": true
+                }
+            }
+        }
+    },
+    "skills": {
+        "install": {
+            "nodeManager": "npm"
+        },
+        "entries": {
+            "safety-executor": {
+                "enabled": true
+            }
+        }
+    },
+    "plugins": {
+        "enabled": true,
+        "allow": [
+            "feishu",
+            "xiaomi",
+            "openrouter",
+            "browser"
+        ],
+        "entries": {
+            "feishu": {
+                "enabled": true
+            },
+            "xiaomi": {
+                "enabled": true
+            },
+            "openrouter": {
+                "enabled": true
+            },
+            "browser": {
+                "enabled": true
+            }
+        }
+    }
+}

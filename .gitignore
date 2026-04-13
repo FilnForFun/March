@@ -1,0 +1,30 @@
+# 敏感文件
+*.key
+*.pem
+.env
+.secrets
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+.venv/
+
+# 大型数据文件 (可选推送)
+*.jsonl
+*.bin
+*.db
+
+# OpenClaw 内部文件
+.openclaw/
+node_modules/
+
+# 系统文件
+.DS_Store
+Thumbs.db

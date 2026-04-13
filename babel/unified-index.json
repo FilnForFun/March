@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "built_at": "2026-04-13T09:40:17.701850",
+  "sources": {
+    "session": {
+      "file": "session-fts.json",
+      "total_sessions": 84,
+      "total_messages": 1334,
+      "vocabulary_size": 94868
+    },
+    "memory": {
+      "file": "memory-index.json",
+      "total_files": 60
+    },
+    "skills": {
+      "file": "skills-index.json",
+      "total_skills": 3
+    }
+  },
+  "stats": {
+    "total_sessions": 84,
+    "total_memories": 60,
+    "total_skills": 3,
+    "build_time_ms": 0
+  }
+}
