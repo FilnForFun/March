@@ -68,8 +68,24 @@ March/
 
 ## 🔄 更新策略
 
-- **OpenClaw 版本升级前**: 推送当前配置到本仓库作为备份
-- **巴别塔架构升级前**: 推送当前架构状态到本仓库
+### 自动推送
+- **每日 03:00**: Windows 计划任务 `March-Repo-Auto-Push` 自动推送
+- **OpenClaw 升级前**: 手动运行 `auto-push.bat` 备份当前状态
+- **巴别塔架构升级前**: 手动运行 `auto-push.bat` 备份当前状态
+
+### 手动推送
+```powershell
+# 运行自动推送脚本
+C:\Users\30959\.openclaw\workspace\March\auto-push.bat
+
+# 或手动推送
+cd C:\Users\30959\.openclaw\workspace\March
+git add -A
+git commit -m "Manual update: [description]"
+git push origin main
+```
+
+### 达尔文进化扫描
 - **每周日 22:00**: 达尔文进化扫描自动更新索引
 
 ## ⚠️ 安全说明
