@@ -28,3 +28,7 @@ node_modules/
 # 绯荤粺鏂囦欢
 .DS_Store
 Thumbs.db
+
+# 大型索引文件 (>100MB)
+semantic-graph.json
+session-fts.json
