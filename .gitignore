@@ -32,3 +32,7 @@ Thumbs.db
 # 大型索引文件 (>100MB)
 semantic-graph.json
 session-fts.json
+
+# 大型索引文件 (>100MB)
+semantic-graph.json
+session-fts.json
